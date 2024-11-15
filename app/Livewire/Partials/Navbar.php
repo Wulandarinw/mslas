@@ -1,5 +1,4 @@
 <?php
-// Navbar.php
 namespace App\Livewire\Partials;
 
 use App\Helpers\CartManagement;
@@ -11,7 +10,7 @@ use Livewire\Component;
 class Navbar extends Component
 {
     public $totalCount = 0;
-
+    
     #[Url]
     public $search = '';
 
@@ -30,10 +29,12 @@ class Navbar extends Component
         $this->totalCount = $cartTotals['item_count'];
     }
 
-    public function updatedSearch()
+    public function performSearch()
     {
-        // Redirect to products page with search query
-        $this->redirect('/products?search=' . urlencode($this->search));
+        // Only redirect if search is not empty
+        if (trim($this->search) !== '') {
+            $this->redirect('/products?search=' . urlencode($this->search));
+        }
     }
 
     public function render()
@@ -45,5 +46,3 @@ class Navbar extends Component
         ]);
     }
 }
-
-// ProductsPage.php modifications for the search functionality

@@ -14,7 +14,7 @@ class RevenueChart extends ChartWidget
 
     protected function getType(): string
     {
-        return 'line';
+        return 'bar';
     }
 
     protected function getData(): array

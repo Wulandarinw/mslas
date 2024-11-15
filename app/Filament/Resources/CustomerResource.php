@@ -74,9 +74,8 @@ class CustomerResource extends Resource
             ->filters([
                 Tables\Filters\SelectFilter::make('gender')
                     ->options([
-                        'male' => 'Male',
-                        'female' => 'Female',
-                        'other' => 'Other',
+                        'Laki-laki' => 'Laki-laki',
+                        'Perempuan' => 'Perempuan'
                     ]),
                 Tables\Filters\Filter::make('created_at')
                     ->form([
@@ -96,7 +95,6 @@ class CustomerResource extends Resource
                     })
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ])
             ->bulkActions([
