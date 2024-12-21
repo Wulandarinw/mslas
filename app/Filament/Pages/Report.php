@@ -32,9 +32,9 @@ class Report extends Page
     protected function getHeaderWidgets(): array
     {
         return [
-            OrderStats::class,
-            RevenueChart::class,
-            PopularProductsChart::class,
+            // OrderStats::class,
+            // RevenueChart::class,
+            // PopularProductsChart::class,
             PopularProductsTable::class,
             // Widgets\SalesChart::class,
             
